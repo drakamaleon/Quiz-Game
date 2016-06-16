@@ -15,14 +15,23 @@ if (file_exists($ping)) {
         $i ++;
     }
     $_SESSION["preguntas"]=$preguntas;
-    $_SESSION["fila"]=1;
+    $_SESSION["fila"]=rand(1,2);
     //print_r($_SESSION["preguntas"]);
-    header('Location: Recibidas.php');
+    header('Location: Jugador.php');
     
 } else {
-    echo "Archivo no encontrado. Se creó el archivo";
-    $fp = fopen($ping, "a");
-    header('Location: PaginaInicio.php');
+    echo "<br>";
+    echo "PING INVALIDO";
+    echo "<body>
+        <form action=\"PaginaInicio.php\" method=\"post\" name=\"n\">
+            <button type=\"submit\">
+            VOLVER
+            </button>
+            
+        </form>
+        
+    </body>";
+    
 }
 
 ?>

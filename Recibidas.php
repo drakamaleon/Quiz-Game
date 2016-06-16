@@ -11,12 +11,18 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        @session_start();//inicas la sesion  usas la variable  
+        $nombre = $_POST["Nombre"];
+        @session_start();//inicas la sesion  usas la variable 
+        $_SESSION["puntaje"]=0;
         print_r($_SESSION["preguntas"]);  
         echo"<br/>";
         echo"<br/>";
         echo"<br/>";
-        print_r($_SESSION["fila"]);  
+        echo($_SESSION["fila"]);
+        echo "</br>";
+        echo $nombre;
+        echo "</br>";
+        echo ($_SESSION["puntaje"]);
         ?>
     </body>
 </html>
