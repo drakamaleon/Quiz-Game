@@ -11,8 +11,10 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        $nombre = $_POST["Nombre"];
         @session_start();//inicas la sesion  usas la variable 
+        session_register("puntaje");
+        session_register("nombre");
+        $_SESSION["nombre"]= $_POST["Nombre"];
         $_SESSION["puntaje"]=0;
         print_r($_SESSION["preguntas"]);  
         echo"<br/>";
@@ -24,5 +26,12 @@ and open the template in the editor.
         echo "</br>";
         echo ($_SESSION["puntaje"]);
         ?>
+        
+        <form action="Guardar.php" method="post" name="n">
+            <button type="submit">
+            Terminar
+            </button>
+            
+        </form>
     </body>
 </html>
