@@ -1,25 +1,32 @@
 <?php
 
 $ping = $_POST["PING"];
+$tipo = $_POST["Tipo"];
 if (file_exists($ping)) {
     session_start();//inicas la sesion 
-    session_register("preguntas");//registras tu variable de sesion 
+    session_register("preguntas");
     session_register("fila");
     session_register("ping");
+    session_register("Usar");
     $fp = fopen($ping, "r");
     $preguntas = array();
     $i=0;
-    while(!feof($fp)) {
-        $linea = fgets($fp);
-        $dividido = explode(";", $linea);
-        $preguntas[$i]=$dividido;
-        $i ++;
+    if($tipo =="JUGAR"){
+        while(!feof($fp)) {
+            $linea = fgets($fp);
+            $dividido = explode(";", $linea);
+            $preguntas[$i]=$dividido;
+            $i ++;
+        }
+        $_SESSION["preguntas"]=$preguntas;
+        $_SESSION["ping"]=$ping;
+        $_SESSION["fila"]=rand(1,2);
+    
+        header('Location: Jugador.php');}
+    else{
+        $_SESSION["Usar"]="";
+        header('Location: Puntajes.php');
     }
-    $_SESSION["preguntas"]=$preguntas;
-    $_SESSION["ping"]=$ping;
-    $_SESSION["fila"]=rand(1,2);
-    //print_r($_SESSION["preguntas"]);
-    header('Location: Jugador.php');
     
 } else {
     echo "<br>";

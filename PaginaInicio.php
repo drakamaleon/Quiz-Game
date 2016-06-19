@@ -11,6 +11,8 @@ and open the template in the editor.
     </head>
     <body>
         <form action="Validador.php" method="post" name="frm">
+            <input type="radio" name="Tipo" value="JUGAR" checked="checked" /> JUGAR<br>
+            <input type="radio" name="Tipo" value="PUNTAJES" /> PUNTAJES<br>
             <input type="text" name ="PING"/>
             <input type="submit" name ="ENVIAR"/>
             
