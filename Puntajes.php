@@ -65,8 +65,8 @@ class Pantalla{
         $this->cuerpo="";
     }
     
-    function agregar($lista,$numero){
-        $titulo=$this->tituloI."FILA ".$numero."\"".$this->tituloD."\n<ul>\n";
+    function agregar($lista,$numero,$promedio){
+        $titulo=$this->tituloI."FILA ".$numero."PROMEDIO(".$promedio.")"."\"".$this->tituloD."\n<ul>\n";
         
         $this->cuerpo= $this->cuerpo.$titulo;
         foreach ($lista as &$jug){
@@ -105,17 +105,28 @@ class Pantalla{
             $fila2=array();
             $i=0;
             $j=0;
+            $total=array();
+            $total2=array();
             while(!feof($fp)) {
             $linea = fgets($fp);
             $dividido = explode(";", $linea);
+            
             if($dividido[2]==1){
-                array_push($fila1, new Jugador($dividido[0], $dividido[1]));}
-            elseif($dividido[2]==2){
-                array_push($fila2, new Jugador($dividido[0], $dividido[1]));}
+                array_push($fila1, new Jugador($dividido[0], $dividido[1]));
+                array_push($total,$dividido[1]);
             }
+            elseif($dividido[2]==2){
+                array_push($fila2, new Jugador($dividido[0], $dividido[1]));
+                array_push($total2,$dividido[1]);
+                }
+            }
+        
+        
+        $promedio1= array_sum($total)/count($total);
+        $promedio2= array_sum($total2)/count($total2);
         $ver = new Pantalla();
-        $ver->agregar($fila1, 1);
-        $ver->agregar($fila2, 2);
+        $ver->agregar($fila1, 1,$promedio1);
+        $ver->agregar($fila2, 2,$promedio2);
         $ver->mostrar();
         }
     }
