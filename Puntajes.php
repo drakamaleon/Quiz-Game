@@ -14,7 +14,7 @@ class Pantalla{
     public $TituloI;
     public $TituloD;
     public $piePagina;
-    function __construct(){
+    function __construct($Crear){
         $this->encabezado=
                 "<!DOCType html>\n" .
                 "<html>\n" .
@@ -41,7 +41,7 @@ class Pantalla{
                 "</style>\n" .
                 "<body>\n" .
                 "<div class=\"importante\" style= height:60px>\n" .
-                "<h1>PUNTAJES</h1>\n" .
+                "<h1>".$Crear."</h1>\n" .
                 "</div>\n" .
                 "<hr>\n";
         $this->piePagina=
@@ -65,11 +65,12 @@ class Pantalla{
         $this->cuerpo="";
     }
     
-    function agregar($lista,$numero,$promedio){
-        $titulo=$this->tituloI."FILA ".$numero."PROMEDIO(".$promedio.")"."\"".$this->tituloD."\n<ul>\n";
+    function agregar($lista,$numero,$promedio,$C){
+        $titulo=$this->tituloI."FILA ".$numero." PROMEDIO(".$promedio.")"."\"".$this->tituloD."\n<ul>\n";
         
         $this->cuerpo= $this->cuerpo.$titulo;
-        foreach ($lista as &$jug){
+        for ($i = 0; $i < $C; $i++){
+            $jug =$lista[$i];
             $jugP="<li><pre>".$jug->nombre."\t".$jug->puntaje."</pre></li>\n";
             $this->cuerpo=$this->cuerpo.$jugP;
         }
@@ -78,6 +79,9 @@ class Pantalla{
     
     function mostrar(){
         echo $this->encabezado.$this->cuerpo.$this->piePagina;
+    }
+    function ag($str){
+        $this->cuerpo =  $this->cuerpo.$str;
     }
     
 }
@@ -90,24 +94,28 @@ class Pantalla{
     session_start();
     if($_SESSION["puntaje"]==""){
         $_SESSION["puntaje"]="Otro";
-    echo "<form action=\"Puntajes.php\" method=\"post\" name=\"frm\">
-            <input type=\"radio\" name=\"Usar\" value=\"Puntajes\" checked=\"checked\" /> PUNTAJES<br>
+        $ver = new Pantalla("PUNTUACIONES");
+        
+     $ver->ag("<form action=\"Puntajes.php\" method=\"post\" name=\"frm\">
+            <input type=\"radio\" name=\"Usar\" value=\"PUNTAJES\" checked=\"checked\" /> PUNTAJES<br>
             <input type=\"radio\" name=\"Usar\" value=\"TOP10\" /> TOP 10<br>
            <input type=\"submit\" name =\"ENVIAR\"/>
             
-    </form>";}
+    </form>");
+     $ver->mostrar();
+    }
     else{
         $_SESSION["puntaje"]="";
         $fp = fopen($ping."P", "r");
         $tipo = $_POST["Usar"];
-        if($tipo=="Puntajes"){
-            $fila1=array();
-            $fila2=array();
-            $i=0;
-            $j=0;
-            $total=array();
-            $total2=array();
-            while(!feof($fp)) {
+        
+        $fila1=array();
+        $fila2=array();
+        $i=0;
+        $j=0;
+        $total=array();
+        $total2=array();
+        while(!feof($fp)) {
             $linea = fgets($fp);
             $dividido = explode(";", $linea);
             
@@ -118,18 +126,37 @@ class Pantalla{
             elseif($dividido[2]==2){
                 array_push($fila2, new Jugador($dividido[0], $dividido[1]));
                 array_push($total2,$dividido[1]);
-                }
             }
-        
+            
+        }
         
         $promedio1= array_sum($total)/count($total);
         $promedio2= array_sum($total2)/count($total2);
-        $ver = new Pantalla();
-        $ver->agregar($fila1, 1,$promedio1);
-        $ver->agregar($fila2, 2,$promedio2);
+        $ver = new Pantalla($tipo);
+        $C1=count($fila1);
+        $C2=count($fila2);
+        if($tipo =="TOP10"){
+            function orden($a,$b){
+                if ($a->puntaje == $b->puntaje) {
+                return 0;
+                }
+                return ($a->puntaje > $b->puntaje) ? -1 : 1;
+            }
+            usort($fila1, "orden");
+            usort($fila2, "orden");
+            
+            if($C1>10){
+                $C1=10;
+            }
+            if($C2>10){
+                $C2=10;
+            }
+        }
+        $ver->agregar($fila1, 1,$promedio1,$C1);
+        $ver->agregar($fila2, 2,$promedio2,$C2);
         $ver->mostrar();
         }
-    }
-    
+        
+        
 
 
