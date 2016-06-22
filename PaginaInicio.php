@@ -11,12 +11,13 @@ class Pantalla{
     public $TituloI;
     public $TituloD;
     public $piePagina;
+    public $nombre="QuizGame";
     function __construct($Crear){
         $this->encabezado=
                 "<!DOCType html>\n" .
                 "<html>\n" .
                 "<head>\n" .
-                "<title>Netflix</title>\n" .""
+                "<title>".$this->nombre."</title>\n" .""
                 . "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n".
                 "</head>\n" .
                 "<style>\n" .
