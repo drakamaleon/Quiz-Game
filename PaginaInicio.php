@@ -87,7 +87,9 @@ class Pantalla{
             <input type=\"radio\" name=\"Tipo\" value=\"JUGAR\" checked=\"checked\" /> JUGAR<br>
             <input type=\"radio\" name=\"Tipo\" value=\"PUNTAJES\" /> PUNTAJES<br>
             <input type=\"text\" name =\"PING\"/>
-            <input type=\"submit\" name =\"ENVIAR\"/>
+            <button type=\"submit\">
+            Ir
+            </button>
             
         </form>");
      $vera->mostrar();
