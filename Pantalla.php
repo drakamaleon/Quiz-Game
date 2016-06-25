@@ -1,36 +1,24 @@
 <?php
 
-$pin = $_POST["PIN"];
-$tipo = $_POST["Tipo"];
-if (file_exists($pin)) {
-    session_start();//inicas la sesion 
-    session_register("preguntas");
-    session_register("fila");
-    session_register("pin");
-    session_register("Usar");
-    $fp = fopen($pin, "r");
-    $preguntas = array();
-    $i=0;
-    if($tipo =="JUGAR"){
-        while(!feof($fp)) {
-            $linea = fgets($fp);
-            $dividido = explode(";", $linea);
-            $preguntas[$i]=$dividido;
-            $i ++;
-        }
-        $_SESSION["preguntas"]=$preguntas;
-        $_SESSION["pin"]=$pin;
-        $_SESSION["fila"]=rand(1,2);
-    
-        header('Location: Jugador.php');}
-    else{
-        $_SESSION["Usar"]="";
-        header('Location: Puntajes.php');
-    }
-    
-} else {
-    echo "<br>";
-    echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n".
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+class Pantalla{
+    public $encabezado;
+    public $cuerpo;
+    public $TituloI;
+    public $TituloD;
+    public $piePagina;
+    function __construct($Crear,$nomPestanha){
+        $this->encabezado=
+                "<!DOCType html>\n" .
+                "<html>\n" .
+                "<head>\n" .
+                "<title>".$nomPestanha."</title>\n" .""
+                . "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n".
                 "</head>\n" .
                 "<style>\n" .
                 "body{font-family:Georgia;\n" .
@@ -51,19 +39,35 @@ if (file_exists($pin)) {
                 "</style>\n" .
                 "<body>\n" .
                 "<div class=\"importante\" style= height:60px>\n" .
-                "<h1>PIN INVALIDO</h1>\n" .
+                "<h1>".$Crear."</h1>\n" .
                 "</div>\n" .
                 "<hr>\n";
-    echo "<body>
-        <form action=\"PaginaInicio.php\" method=\"post\" name=\"n\">
-            <button type=\"submit\">
-            VOLVER
-            </button>
-            
-        </form>
-        
-    </body>";
+        $this->piePagina=
+     
+   
+    "\n".
+    "<div class=\"importante\">\n" .
+"	<dl style= \"font-family:Georgia;\">\n" .
+"           <dt style=list-style-type:\"none\">INTEGRANTES</dt>\n" .
+"		<dd>-CARLOS LEON</dd>\n" .
+"		<dd>-TAHIS AHTTY</dd>\n" .
+"	</dl>\n" .
+"	\n" .
+            "</div>\n" .
+            "</body>\n" .
+            "\n" .
+            "</html>";
+        $this->tituloI="<h2><samp id =\"titulo\">";
+        $this->tituloD="</samp></h2>\n" .
+                "<div id=\"lista\">";
+        $this->cuerpo="";
+    }
     
+    function mostrar(){
+        echo $this->encabezado.$this->cuerpo.$this->piePagina;
+    }
+    function setcuerpo($str){
+        $this->cuerpo =  $this->cuerpo.$str;
+    }
 }
 
-?>

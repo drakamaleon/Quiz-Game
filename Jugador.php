@@ -1,4 +1,16 @@
-<html>
+<?php 
+
+class Jugador{
+    public $nombre;
+    public $puntaje;
+    function __construct($nom,$pun) {
+    $this->nombre=$nom;
+    $this->puntaje=$pun;
+    }
+    
+}
+?>
+<!--<html>
     <head>
         <meta charset="UTF-8">
         <title></title>
@@ -14,4 +26,4 @@
         </form>
         
     </body>
-</html>
+</html>-->
