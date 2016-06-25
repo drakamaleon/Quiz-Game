@@ -14,19 +14,19 @@ class Pantalla{
     public $piePagina;
     function __construct($Crear,$nomPestanha){
         $tituloPrincipal="<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n".
-                "</head>\n" .
-                "<style>\n" .
-                "body{font-family:Georgia;\n" .
-                "background: #ffffff;\n" .
-                "background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
+              "</head>\n" .
+              "<style>\n" .
+              "body{font-family:Georgia;\n" .
+              "background: #ffffff;\n" .
+              "background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
                 "background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(9%, #ffffff), color-stop(52%, #b7deed), color-stop(90%, #ffffff), color-stop(100%, #ffffff));\n" .
-                "background: -webkit-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
-                "background: -o-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
-                "background: -ms-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
-                "background: linear-gradient(to right, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
-                "filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );\n" .
-                "}\n" .
-                "#titulo {color:#00B499; width: 300px}\n" .
+             "background: -webkit-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
+              "background: -o-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
+             "background: -ms-linear-gradient(left, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
+              "background: linear-gradient(to right, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
+               "filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );\n" .
+               "}\n" .
+                "#titulo {color:#3f888f ; width: 300px}\n" .
                 ".importante { background-color: #00B499	 ; color:white;}\n" .
                 "#lista { margin: 30px; font-family:Arial}\n" .
                 "#categoria { color:red; }\n".

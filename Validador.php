@@ -1,7 +1,7 @@
 <?php
 
-include ("Pantalla.php");
-
+include ("Preguntas.php");
+include ("Responder.php");
 $pin = $_POST["PIN"];
 $tipo = $_POST["Tipo"];
 if (file_exists($pin)) {
@@ -17,14 +17,19 @@ if (file_exists($pin)) {
         while(!feof($fp)) {
             $linea = fgets($fp);
             $dividido = explode(";", $linea);
-            $preguntas[$i]=$dividido;
+            $preguntas[$i]=new Pregunta($dividido[0],$dividido[1],$dividido[2],$dividido[3]);
             $i ++;
         }
         $_SESSION["preguntas"]=$preguntas;
         $_SESSION["pin"]=$pin;
         $_SESSION["fila"]=rand(1,2);
     
-        header('Location: Jugador.php');}
+        header('Location: Jugador.php');
+        foreach($preguntas as $pregunta) 
+        { 
+            mostrarPregunta($pregunta);
+        }
+    }
     else{
         $_SESSION["Usar"]="";
         header('Location: Puntajes.php');
