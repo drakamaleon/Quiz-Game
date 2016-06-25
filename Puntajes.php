@@ -3,7 +3,6 @@
 include ("Pantalla.php");
 include ("Jugador.php");
 
-
     session_start();
     if($_SESSION["puntaje"]==""){
         $_SESSION["puntaje"]="Otro";

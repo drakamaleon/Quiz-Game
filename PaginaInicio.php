@@ -17,7 +17,7 @@ include ("Pantalla.php");
             </button>
             
         </form>");
-     $vera->mostrar();a
+     $vera->mostrar();
     
     
 
