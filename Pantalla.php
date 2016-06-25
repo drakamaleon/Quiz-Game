@@ -13,12 +13,7 @@ class Pantalla{
     public $TituloD;
     public $piePagina;
     function __construct($Crear,$nomPestanha){
-        $this->encabezado=
-                "<!DOCType html>\n" .
-                "<html>\n" .
-                "<head>\n" .
-                "<title>".$nomPestanha."</title>\n" .""
-                . "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n".
+        $tituloPrincipal="<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n".
                 "</head>\n" .
                 "<style>\n" .
                 "body{font-family:Georgia;\n" .
@@ -42,6 +37,12 @@ class Pantalla{
                 "<h1>".$Crear."</h1>\n" .
                 "</div>\n" .
                 "<hr>\n";
+        $this->encabezado=
+                "<!DOCType html>\n" .
+                "<html>\n" .
+                "<head>\n" .
+                "<title>".$nomPestanha."</title>\n" .""
+                .$tituloPrincipal;
         $this->piePagina=
      
    
@@ -61,6 +62,10 @@ class Pantalla{
         $this->tituloD="</samp></h2>\n" .
                 "<div id=\"lista\">";
         $this->cuerpo="";
+    }
+    
+    function enviarFormatoTitulo(){
+        return $tituloPrincipal;
     }
     
     function mostrar(){

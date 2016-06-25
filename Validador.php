@@ -1,5 +1,7 @@
 <?php
 
+include ("Pantalla.php");
+
 $pin = $_POST["PIN"];
 $tipo = $_POST["Tipo"];
 if (file_exists($pin)) {
