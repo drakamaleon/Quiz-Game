@@ -26,7 +26,7 @@ class Pantalla{
                 "background: linear-gradient(to right, #ffffff 0%, #ffffff 9%, #b7deed 52%, #ffffff 90%, #ffffff 100%);\n" .
                 "filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );\n" .
                 "}\n" .
-                "#titulo { background-color: #68FFDB ; color:purple; width: 300px}\n" .
+                "#titulo {color:#00B499; width: 300px}\n" .
                 ".importante { background-color: #00B499	 ; color:white;}\n" .
                 "#lista { margin: 30px; font-family:Arial}\n" .
                 "#categoria { color:red; }\n".
@@ -62,10 +62,6 @@ class Pantalla{
         $this->tituloD="</samp></h2>\n" .
                 "<div id=\"lista\">";
         $this->cuerpo="";
-    }
-    
-    function enviarFormatoTitulo(){
-        return $tituloPrincipal;
     }
     
     function mostrar(){
