@@ -1,5 +1,6 @@
 <?php
 include ("Pantalla.php");
+include ("Preguntas.php");
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -8,10 +9,12 @@ include ("Pantalla.php");
  */
 session_start();
 $preguntas =$_SESSION["preguntas"];
+$i=$_SESSION["iterador"];
 
 function mostrarPregunta($pregunta,$i){
     $str="";
     $opciones=$pregunta->opciones;
+    print_r($opciones);
     $resp=new Pantalla("".$i.":".$pregunta->pregunta, "QG-".$pregunta->fila."Preg ".$i);
     for ($k=0;$k<count($opciones);$k+=1){
         $opcion=$opciones[$k];
@@ -26,7 +29,8 @@ function mostrarPregunta($pregunta,$i){
     
     $resp->mostrar();
 }
-$i=$_SESSION["iterador"];
+
+
 $question=$preguntas[$i];
         mostrarPregunta($question,$i+1);
         $_SESSION["iterador"]+=1;

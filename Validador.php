@@ -13,16 +13,14 @@ if (file_exists($pin)) {
     session_register("Usar");
     $fp = fopen($pin, "r");
     $preguntas = array();
-    $i=0;
     $_SESSION["fila"]=rand(1,2);
     if($tipo =="JUGAR"){
         while(!feof($fp)) {
             $linea = fgets($fp);
             $dividido = explode(";", $linea);
             $opciones= explode(",", $dividido[3]);
-            if($_SESSION["fila"]==$dividido[0]){
-                $preguntas[$i]=new Pregunta($dividido[0],$dividido[1],$dividido[2],$opciones);
-                $i+=1;
+            if((string)$_SESSION["fila"]==(string)$dividido[0]){
+                array_push($preguntas, new Pregunta($dividido[0],$dividido[1],$dividido[2],$opciones));
             }
         }
         $_SESSION["iterador"]=0;
