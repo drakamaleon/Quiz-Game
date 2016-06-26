@@ -1,10 +1,5 @@
-1;Que analizador me genera un arbol de tokens;sintactico;lexico,semantico,ninguno de los anteriores,sintactico
-1;Cuantos elementos tiene un automata finito;5;1,6,7,5
-1;Que es OpenMp;API;libreria,API,galeria,estructura,lenguaje
-1;Theano es mas rapido que Numpy para operaciones cortas;Falso;Verdadero,Falso
-1;Que expresion regular me lee abbbbbbb;ab*;ab,b+,ab*
-2;Que analizador devuelve un token;lexico;sintactico,lexico,semantico,ninguno de los anteriores
-2;Numpy es mas rapido que Theano para operaciones largas;Falso,Verdadero,Falso
-2;Elija cual no es una herramienta de Java mejorado;DEVC,HI's COINS,DEX,DALVIK MACHINE
-2;Cual de estas expresiones corresponde para a*b|ab*;aaaaaaab;aabb,a,bb,aaaaaaab
-2;Cuantos elementos tiene un automata finito;5;1,6,7,5
+1;Cuantos dedos tiene la mano;1;2;3;5;5
+2;Cuantos dedos tiene la mano;5;2;3;8;5
+3;Cuantos dedos tiene la mano;1;5;3;8;5
+4;Cuantos dedos tiene la mano;1;2;5;8;5
+5;Cuantos dedos tiene la mano;1;2;3;5;5
