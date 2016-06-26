@@ -1,5 +1,5 @@
 <?php
-include ("Validador.php");
+include ("Pantalla.php");
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -7,6 +7,7 @@ include ("Validador.php");
  * and open the template in the editor.
  */
 session_start();
+$preguntas =$_SESSION["preguntas"];
 
 function mostrarPregunta($pregunta,$i){
     $str="";
@@ -25,20 +26,8 @@ function mostrarPregunta($pregunta,$i){
     
     $resp->mostrar();
 }
-$i=1;
-$questions=$preguntas;
-if($_SESSION["fila"]==1){
-    for($j=0;$j<(count($questions))/2;$j+=1) 
-            { 
-                mostrarPregunta($questions[$j],$i);
-                $i+=1;
-            }
-}
- else {
-    if($_SESSION["fila"]==2){
-            for($j=(count($questions))/2;$j<count($questions);$j+=1){ 
-                mostrarPregunta($questions[$j],$i);
-                $i+=1;
-            }
-     }
- }
+$i=$_SESSION["iterador"];
+$question=$preguntas[$i];
+        mostrarPregunta($question,$i+1);
+        $_SESSION["iterador"]+=1;
+

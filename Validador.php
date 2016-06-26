@@ -14,17 +14,20 @@ if (file_exists($pin)) {
     $fp = fopen($pin, "r");
     $preguntas = array();
     $i=0;
+    $_SESSION["fila"]=rand(1,2);
     if($tipo =="JUGAR"){
         while(!feof($fp)) {
             $linea = fgets($fp);
             $dividido = explode(";", $linea);
             $opciones= explode(",", $dividido[3]);
-            $preguntas[$i]=new Pregunta($dividido[0],$dividido[1],$dividido[2],$opciones);
-            $i+=1;
+            if($_SESSION["fila"]==$dividido[0]){
+                $preguntas[$i]=new Pregunta($dividido[0],$dividido[1],$dividido[2],$opciones);
+                $i+=1;
+            }
         }
+        $_SESSION["iterador"]=0;
         $_SESSION["preguntas"]=$preguntas;
         $_SESSION["pin"]=$pin;
-        $_SESSION["fila"]=rand(1,2);
     
         header('Location: Responder.php');
         
