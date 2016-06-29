@@ -1,0 +1,10 @@
+1;El orden correcto de la jerarquía de software es:;Lógico/digital-Control (firmware)-Lenguaje de máquina-Lenguaje ensamblador-Software de Sistema-Lenguaje de alto nivel-Aplicaciones de usuario;Lenguaje de máquina-Lógico/digital-Control (firmware)-Lenguaje ensamblador-Lenguaje de alto nivel-Software de Sistema-Aplicaciones de usuario,Lógico/digital-Control (firmware)-Lenguaje ensamblador-Lenguaje de máquina-Software de Sistema-Lenguaje de alto nivel-Aplicaciones de usuario,Lógico/digital-Control (firmware)-Lenguaje de máquina-Lenguaje ensamblador-Software de Sistema-Lenguaje de alto nivel-Aplicaciones de usuario
+1;Theano es mejor que Numpy al hacer multiplicaciones;Falso;Verdadero,Falso
+1;OpenMP pertenece a qué lenguaje de programación;C;Python,Java,C,Ruby
+1;Un lenguaje está formado por reglas semánticas;Verdadero;Verdadero,Falso
+1;El compilador del Sistema Android es:;Compilador Justo En el Tiempo(JITC);Compilador Justo En el Tiempo(JITC),Compilador En Adelanto del Tiempo(AOTC)
+2;Un componente de un automata de estado finito es:;Transiciones;Terminales,Transiciones,Tokens,Ninguna de las Anteriores
+2;Theano es más rápida que Numpy para operar matrices;Verdadero;Verdadero,Falso
+2;Derivar una gramática permite reconocer una cadena de tokens;Falso;Verdadero,Falso
+2;Una gramática de libre contexto se compone de:;Producciones;Intérpretes,Sentencias,Producciones,Concurrencias
+2;Verificación de tipos es un componente de:;El analizador Semántico;El analizador Lexico,El analizador Sintáctico,El analizador Semántico

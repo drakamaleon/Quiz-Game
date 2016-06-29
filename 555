@@ -4,7 +4,7 @@
 1;Theano es mas rapido que Numpy para operaciones cortas;Falso;Verdadero,Falso
 1;Que expresion regular me lee abbbbbbb;ab*;ab,b+,ab*
 2;Que analizador devuelve un token;lexico;sintactico,lexico,semantico,ninguno de los anteriores
-2;Numpy es mas rapido que Theano para operaciones largas;Falso,Verdadero
-2;Elija cual no es una herramienta de Java mejorado;DEVC,HI's COINS,DEX,DALVIK MACHINE
+2;Numpy es mas rapido que Theano para operaciones largas;Falso;Verdadero,Falso
+2;Elija cual no es una herramienta de Java mejorado;HI's COINS;DEVC,HI's COINS,DEX,DALVIK MACHINE
 2;Cual de estas expresiones corresponde para a*b|ab*;aaaaaaab;aabb,a,bb,aaaaaaab
 2;Cuantos elementos tiene un automata finito;5;1,6,7,5
