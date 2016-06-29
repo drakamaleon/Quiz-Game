@@ -14,7 +14,7 @@ $i=$_SESSION["iterador"];
 function mostrarPregunta($pregunta,$i){
     $str="";
     $opciones=$pregunta->opciones;
-    $resp=new Pantalla("".$i.":".$pregunta->pregunta, "QG-".$pregunta->fila."Preg ".$i);
+    $resp=new Pantalla("".$i.":".$pregunta->pregunta, "QG-Fila".$pregunta->fila." Preg ".$i);
     for ($k=0;$k<count($opciones);$k+=1){
         $opcion=$opciones[$k];
         $str=$str."<input type=\"radio\" name=\"Usar\" value=\"".$opcion."\"/>".$opcion."<br>";
@@ -22,7 +22,9 @@ function mostrarPregunta($pregunta,$i){
     
     $resp->setcuerpo("<form action=\"Correccion.php\" method=\"post\" name=\"frm\">"
             .$str.
-           "<input type=\"submit\" name =\"RESPONDER\"/>
+           "<button type=\"submit\">
+            Responder
+            </button>
             
     </form>");
     
