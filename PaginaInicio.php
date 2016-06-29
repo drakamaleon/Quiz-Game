@@ -10,8 +10,8 @@ include ("Pantalla.php");
     $vera = new Pantalla("INICIO","QuizGame");
         
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
-            <input type=\"radio\" name=\"TipoSesion\" value=\"ESTUDIANTE\" checked=\"checked\" />Estudiante<br>
-             <input type=\"radio\" name=\"TipoSesion\" value=\"PROFESOR\" checked=\"checked\" />Profesor<br>
+            <input type=\"radio\" name=\"TipoSesion\" value=\"ESTUDIANTE\"/>Estudiante<br>
+             <input type=\"radio\" name=\"TipoSesion\" value=\"PROFESOR\"/>Profesor<br>
             <button type=\"submit\">
             Ir
             </button>
