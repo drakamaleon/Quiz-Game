@@ -6,7 +6,7 @@ $nombre = $_SESSION["nombre"];
 $puntaje = $_SESSION["puntaje"];
 $fila= $_SESSION["fila"];
 $fp = fopen($ar, "a");
-$escribir = $nombre.";".$puntaje.";".$fila;
+$escribir = strtoupper($nombre).";".$puntaje.";".$fila;
 
 fwrite($fp, $escribir . PHP_EOL);
 
