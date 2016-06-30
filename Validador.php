@@ -8,12 +8,8 @@ $tipo = $_POST["Tipo"];
 $tipoSesion= $_POST["TipoSesion"];
 if($pin!=NULL){
     if (file_exists($pin)) {
+        $_SESSION["pin"]=$pin;
         session_start();//inicas la sesion 
-        session_register("preguntas");
-        session_register("fila");
-        session_register("pin");
-        session_register("Usar");
-        session_register("puntaje");
         $fp = fopen($pin, "r");
         $preguntas = array();
         $_SESSION["fila"]=rand(1,2);
@@ -28,12 +24,12 @@ if($pin!=NULL){
             }
             $_SESSION["iterador"]=0;
             $_SESSION["preguntas"]=$preguntas;
-            $_SESSION["pin"]=$pin;
             $_SESSION["puntaje"]=0;
             header('Location: Usuario.php');    
         }
         else{
             $_SESSION["Usar"]="";
+            $_SESSION["pin"]=$pin;
             header('Location: Puntajes.php');
         }
 

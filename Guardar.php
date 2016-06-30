@@ -2,7 +2,7 @@
 
 include ("Pantalla.php");
 @session_start();
-$ar =$_SESSION["PIN"]."P";
+$ar =$_SESSION["pin"]."P";
 $nombre = $_SESSION["nombre"];
 $puntaje = $_SESSION["puntaje"];
 $fila= $_SESSION["fila"];

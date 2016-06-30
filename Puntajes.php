@@ -18,7 +18,7 @@ include ("Jugador.php");
     }
     else{
         $_SESSION["puntaje"]="";
-        $fp = fopen($pin."P", "r");
+        $fp = fopen($_SESSION["pin"]."P", "r");
         $tipo = $_POST["Usar"];
         
         $fila1=array();
@@ -79,7 +79,3 @@ include ("Jugador.php");
         crearPromedios($ver,$fila2, 2,$promedio2,$C2);
         $ver->mostrar();
         }
-        
-        
-
-
