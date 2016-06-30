@@ -30,7 +30,7 @@ if($pin!=NULL){
             $_SESSION["preguntas"]=$preguntas;
             $_SESSION["pin"]=$pin;
             $_SESSION["puntaje"]=0;
-            header('Location: Recibidas.php');    
+            header('Location: Usuario.php');    
         }
         else{
             $_SESSION["Usar"]="";

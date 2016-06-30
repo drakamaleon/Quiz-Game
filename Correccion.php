@@ -12,6 +12,7 @@ $i=$_SESSION["iterador"];
 if($respuesta!=NULL){
     if($respuesta==$preguntas[$i]->respuesta){
         $str="Felicidades tuvo la respuesta correcta";
+        $_SESSION["puntaje"]+=5;
         $_SESSION["iterador"]+=1;
         
     }
@@ -23,15 +24,31 @@ if($respuesta!=NULL){
 else{
     $str = "Error debe elegir una opción";
 }
+if($_SESSION["iterador"]<  count($preguntas)){
 $str= $str."<body>
             <form action=\"Responder.php\" method=\"post\" name=\"n\">
                 <button type=\"submit\">
-                VOLVER
+                CONTINUAR
                 </button>
 
             </form>
 
         </body>";
+
+}
+else{
+$str= $str."<body>
+            <form action=\"Guardar.php\" method=\"post\" name=\"n\">
+                <button type=\"submit\">
+                TERMINAR
+                </button>
+
+            </form>
+
+        </body>";
+
+}
+
 
 $ver = new Pantalla("Resultado", "Correción");
 $ver->setcuerpo($str);
