@@ -55,8 +55,23 @@ else{
     if($tipoSesion=="ESTUDIANTE"){
         header('Location: InicioEstudiante.php');
     }
-    else{
+    if($tipoSesion=="PROFESOR"){
         header('Location: InicioProfesor.php');
+    }
+    else{
+        $str="Debe seleccionar una opción valida";
+        $str= $str."<body>
+            <form action=\"PaginaInicio.php\" method=\"post\" name=\"n\">
+                <button type=\"submit\">
+                VOLVER
+                </button>
+
+            </form>
+
+        </body>";
+        $ver = new Pantalla("ERROR", "Opción invalida");
+        $ver->setcuerpo($str);
+        $ver->mostrar();
     }
 }
 
