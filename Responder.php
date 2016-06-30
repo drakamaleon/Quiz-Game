@@ -10,6 +10,8 @@ include ("Preguntas.php");
 session_start();
 $preguntas =$_SESSION["preguntas"];
 $i=$_SESSION["iterador"];
+session_register("puntaje");
+session_register("nombre");
 
 function mostrarPregunta($pregunta,$i){
     $str="";
@@ -33,6 +35,5 @@ function mostrarPregunta($pregunta,$i){
 
 
 $question=$preguntas[$i];
-        mostrarPregunta($question,$i+1);
-        $_SESSION["iterador"]+=1;
+mostrarPregunta($question,$i+1);
 

@@ -13,12 +13,13 @@ if($pin!=NULL){
         session_register("fila");
         session_register("pin");
         session_register("Usar");
+        session_register("puntaje");
         $fp = fopen($pin, "r");
         $preguntas = array();
         $_SESSION["fila"]=rand(1,2);
         if($tipo =="JUGAR"){
             while(!feof($fp)) {
-                $linea = fgets($fp);
+                $linea = trim(fgets($fp));
                 $dividido = explode(";", $linea);
                 $opciones= explode(",", $dividido[3]);
                 if((string)$_SESSION["fila"]==(string)$dividido[0]){
@@ -28,8 +29,8 @@ if($pin!=NULL){
             $_SESSION["iterador"]=0;
             $_SESSION["preguntas"]=$preguntas;
             $_SESSION["pin"]=$pin;
-
-            header('Location: Responder.php');    
+            $_SESSION["puntaje"]=0;
+            header('Location: Recibidas.php');    
         }
         else{
             $_SESSION["Usar"]="";
