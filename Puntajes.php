@@ -18,7 +18,7 @@ include ("Jugador.php");
     }
     else{
         $_SESSION["puntaje"]="";
-        $fp = fopen($_SESSION["pin"]."P", "r");
+        $fp = fopen($_SESSION["pinP"]."P", "r");
         $tipo = $_POST["Usar"];
         
         $fila1=array();

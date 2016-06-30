@@ -3,17 +3,20 @@
 include ("Preguntas.php");
 include ("Pantalla.php");
 
-$pin = $_POST["PIN"];
+$pinE = $_POST["PINE"];
+$pinP = $_POST["PINP"];
 $tipo = $_POST["Tipo"];
 $tipoSesion= $_POST["TipoSesion"];
-if($pin!=NULL){
-    if (file_exists($pin)) {
-        $_SESSION["pin"]=$pin;
+if($pinE!=NULL or $pinP = $_POST["PINP"]){
+    if (file_exists($pinE) or file_exists($pinP)) {
+        
         session_start();//inicas la sesion 
-        $fp = fopen($pin, "r");
-        $preguntas = array();
-        $_SESSION["fila"]=rand(1,2);
+       
         if($tipo =="JUGAR"){
+            $fp = fopen($pinE, "r");
+            $preguntas = array();
+            $_SESSION["fila"]=rand(1,2);
+            $_SESSION["pinE"]=$pinE;
             while(!feof($fp)) {
                 $linea = trim(fgets($fp));
                 $dividido = explode(";", $linea);
@@ -29,7 +32,8 @@ if($pin!=NULL){
         }
         else{
             $_SESSION["Usar"]="";
-            $_SESSION["pin"]=$pin;
+            $_SESSION["pinP"]=$pinP;
+            $_SESSION["puntaje"]="";
             header('Location: Puntajes.php');
         }
 
