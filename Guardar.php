@@ -2,7 +2,7 @@
 
 include ("Pantalla.php");
 @session_start();
-$ar =$_SESSION["pin"]."P";
+$ar =$_SESSION["pinE"]."P";
 $nombre = $_SESSION["nombre"];
 $puntaje = $_SESSION["puntaje"];
 $fila= $_SESSION["fila"];
@@ -13,8 +13,8 @@ fwrite($fp, $escribir . PHP_EOL);
 
 $mostrar= "<ul>"
 .    "<li>".$nombre."</li>"
-.    "<li>".$puntaje."</li>"
-.    "<li>".$fila."</li>"
+.    "<li>Puntaje: ".$puntaje."</li>"
+.    "<li>Fila: ".$fila."</li>"
         . "</ul>";
 
 $ver = new Pantalla(strtoupper($nombre),"Finalizado");
