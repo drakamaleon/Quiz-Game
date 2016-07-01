@@ -11,7 +11,7 @@ $i=$_SESSION["iterador"];
 
 if($respuesta!=NULL){
     if($respuesta==$preguntas[$i]->respuesta){
-        $str="Felicidades tuvo la respuesta correcta";
+        $str="Felicidades, respuesta correcta";
         $_SESSION["puntaje"]+=5;
         $_SESSION["iterador"]+=1;
         

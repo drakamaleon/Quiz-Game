@@ -6,7 +6,7 @@ $jugador=new Pantalla("USUARIO", "QG-Usuario");
 $jugador->setcuerpo("<form action=\"Recibidas.php\" method=\"post\" name=\"frm\">
             <input type=\"text\" name =\"Nombre\"/>
             <button type=\"submit\">
-            Ingrese su nombre de usuario
+            Ingrese su nombre completo
             </button> 
         </form>"); 
 $jugador->mostrar();
