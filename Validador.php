@@ -7,10 +7,15 @@ $pinE = $_POST["PINE"];
 $pinP = $_POST["PINP"];
 $tipo = $_POST["Tipo"];
 $tipoSesion= $_POST["TipoSesion"];
+$uProfesor= $_POST["USER"];
+$pProfesor= $_POST["PASS"];
+if($pProfesor=="123" and $uProfesor=="rasarag"){
+    header('Location: InicioProfesor.php');
+}
 if($pinE!=NULL or $pinP = $_POST["PINP"]){
     if (file_exists($pinE) or file_exists($pinP)) {
         
-        session_start();//inicas la sesion 
+        session_start();//inicias la sesion 
        
         if($tipo =="JUGAR"){
             $fp = fopen($pinE, "r");
@@ -56,7 +61,7 @@ else{
         header('Location: InicioEstudiante.php');
     }
     if($tipoSesion=="PROFESOR"){
-        header('Location: InicioProfesor.php');
+        header('Location: Login.php');
     }
     else{
         $str="Debe seleccionar una opción valida";
@@ -74,5 +79,6 @@ else{
         $ver->mostrar();
     }
 }
+   
 
 ?>
