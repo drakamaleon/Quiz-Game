@@ -1,5 +1,5 @@
 <?php
-
+@session_start();
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,6 +8,8 @@
 include ("Pantalla.php");
 
     $vera = new Pantalla("INICIO PROFESOR","QG-Profesor");
+    $_SESSION["cuestionario"]=array();
+     $_SESSION["pinG"]=0;
      $_SESSION["puntaje"]="";
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
             <input type=\"radio\" name=\"Tipo\" value=\"PUNTAJES\"/>Ver Puntajes<br>

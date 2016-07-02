@@ -1,31 +1,35 @@
 <?php
-@session_start;
+
 include ("Pantalla.php");
-if($_POST["opciones"]!="" and $_POST["pregunta"]!="" and $_POST["fila"]!="" ){
-     $_SESSION["pregunta"]=$_POST["pregunta"];
-     $_SESSION["fila"]=$_POST["fila"];
-     $opr= explode("\n",$_POST["opciones"]);
+@session_start();
+$opp =$_POST["opciones"];
+$preg =$_POST["pregunta"];
+$fil = $_POST["fila"];
+if($opp!="" and $preg!="" and $fil!="" ){
+     $_SESSION["preguntas"]=substr($preg,0);
+     $_SESSION["filas"]=substr($fil,0);;
+     $opp= explode("\n",$opp);
      
 
-     $opc = array_values(array_unique($opr));
-     if(count($opc)<2){
+     $opp = array_values(array_unique($opp));
+     if(count($opp)<2){
           $ver = new Pantalla("ERROR","QG-ERROR");
           $ver->error("Llenar.php","Ingrese al menos 2 opciones");
      }
      else{
-          $_SESSION["opciones"] = $opc;
+          $_SESSION["opciones"] =$opp;
           $str="";
           
           $resp=new Pantalla("Respuesta", "QG-Respuesta");
-          for ($k=0;$k<count($opc);$k+=1){
-             $opcion=$opc[$k];
+          for ($k=0;$k<count($opp);$k+=1){
+             $opcion=$opp[$k];
              $str=$str."<input type=\"radio\" name=\"respuesta\" value=\"".$opcion."\"/>".$opcion."<br>";
           }
          
-         $seleccion = "<input type=\"radio\" name=\"select\" value=\"Continuar\"checked=\"checked\"/>CONTINUAR<br>";
+         $seleccion = "<input type=\"radio\" name=\"op\" value=\"Continuar\"checked=\"checked\"/>CONTINUAR<br>";
          
          if(count($_SESSION["cuestionario"])>2){
-              $seleccion = $seleccion."<input type=\"radio\" name=\"select\" value=\"Terminar\"/>TERMINAR<br>";
+              $seleccion = $seleccion."<input type=\"radio\" name=\"op\" value=\"Terminar\"/>TERMINAR<br>";
          }
          
          $form="<form action=\"ValProfesor.php\" method=\"post\" name=\"frm\">Seleccione la respuesta correcta<br>"
@@ -37,10 +41,11 @@ if($_POST["opciones"]!="" and $_POST["pregunta"]!="" and $_POST["fila"]!="" ){
                  
          </form>";
          
-         $resp->setcuerpo($form);
+         $resp->setcuerpo($_SESSION["preguntas"]."<br>".$fil."<br>".$form);
          $resp->mostrar();
-}
      }
+     
+}
      
 
 else{

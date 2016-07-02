@@ -7,6 +7,7 @@
  */
 
 include ("Pantalla.php");
+    
     $vera = new Pantalla("INICIO","QuizGame");
         
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
