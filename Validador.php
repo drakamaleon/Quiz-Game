@@ -2,11 +2,12 @@
 
 include ("Preguntas.php");
 include ("Pantalla.php");
-
+@session_start();
 $pinE = $_POST["PINE"];
 $pinP = $_POST["PINP"];
 $tipo = $_POST["Tipo"];
-$tipoSesion= $_POST["TipoSesion"];
+$_SESSION["tipoSesion"]= $_POST["TipoSesion"];
+$tipoSesion=$_SESSION["tipoSesion"];
 $uProfesor= $_POST["USER"];
 $pProfesor= $_POST["PASS"];
 if($pProfesor=="123" and $uProfesor=="rasarag"){

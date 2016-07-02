@@ -18,7 +18,7 @@ while($bandera and $_SESSION["pinG"]==0){
      }
      
 }
-if($pregunta==null){
+if($respuesta==null){
      
      header("Location: Llenar.php");
 }

@@ -9,7 +9,9 @@ if($opp!="" and $preg!="" and $fil!="" ){
      $_SESSION["preguntas"]=substr($preg,0);
      $_SESSION["filas"]=substr($fil,0);;
      $opp= explode("\n",$opp);
-     
+     for ($k=0;$k<count($opp);$k+=1){
+             $opp[$k]=trim($opp[$k]);
+     }
 
      $opp = array_values(array_unique($opp));
      if(count($opp)<2){

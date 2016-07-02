@@ -17,4 +17,20 @@ class Pregunta{
         $this->respuesta=$respuesta;
         $this->opciones=$opciones;
     }
+    
+    function __toString(){
+        $len =count($this->opciones);
+        $op ="";
+        for ($k=0;$k<$len;$k+=1){
+            if($k==($len-1)){
+                $op=$op.$this->opciones[$k];
+            }
+            else{
+                $op=$op.$this->opciones[$k].",";
+            }
+        }
+        
+        $str=$this->fila.";".$this->pregunta.";".$this->respuesta.";".$op;
+        return $str;
+    }
 }
