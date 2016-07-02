@@ -70,5 +70,20 @@ class Pantalla{
     function setcuerpo($str){
         $this->cuerpo =  $this->cuerpo.$str;
     }
+    
+    function error($archivo,$mensaje){
+        $this->setcuerpo("<body>
+            <form action=\"".$archivo."\" method=\"post\" name=\"n\">".
+               $mensaje."<br>
+                <button type=\"submit\">
+                VOLVER
+                </button>
+
+            </form>
+
+        </body>");
+        $this->mostrar();
+}
+    
 }
 

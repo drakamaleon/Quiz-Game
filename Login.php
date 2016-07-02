@@ -13,7 +13,7 @@ include ("Pantalla.php");
             <br>Ingrese usuario de ESPOL ( en serio Espol :) )<br>
             <input type=\"text\" name =\"USER\"/>
             <br>Ingrese contraseña<br>
-            <input type=\"text\" name =\"PASS\"/>
+            <input type=\"password\" name =\"PASS\"/>
             <button type=\"submit\">
             Ingresar
             </button>

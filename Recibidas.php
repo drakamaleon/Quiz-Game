@@ -7,14 +7,5 @@ if($_POST["Nombre"]!=""){
 }
 else{
      $ver = new Pantalla("ERROR","ERROR");
-     $str ="Ingrese un nombre de usuario";
-     $str =$str."<form action=\"Usuario.php\" method=\"post\" name=\"frm\">
-          <button type=\"submit\">
-            VOLVER
-            </button> 
-        </form>";
-     $ver->setcuerpo($str);
-     $ver->mostrar();
-     
-     
+     $ver ->error("Usuario.php","Ingrese un nombre de usuario");
 }
