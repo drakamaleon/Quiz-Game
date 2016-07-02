@@ -11,7 +11,11 @@ $uProfesor= $_POST["USER"];
 $pProfesor= $_POST["PASS"];
 if($pProfesor=="123" and $uProfesor=="rasarag"){
     header('Location: InicioProfesor.php');
-}
+}elseif($pProfesor!="" and $uProfesor!=""){
+        $vera = new Pantalla("ERROR","QG-ERROR");
+        $vera->error("Login.php","Ingrese un usuario correcto");
+    }
+else{
 if($pinE!=NULL or $pinP = $_POST["PINP"]){
     if (file_exists($pinE) or file_exists($pinP)) {
         
@@ -44,16 +48,7 @@ if($pinE!=NULL or $pinP = $_POST["PINP"]){
 
     } else {
         $invalid=new Pantalla("PIN NO VÁLIDO", "QG-Invalid PIN");
-        $invalid->setcuerpo("<body>
-            <form action=\"PaginaInicio.php\" method=\"post\" name=\"n\">
-                <button type=\"submit\">
-                VOLVER
-                </button>
-
-            </form>
-
-        </body>");
-        $invalid->mostrar();
+        $invalid->error("PaginaInicio.php","Ingrese un PIN valido");
     }
 }
 else{
@@ -64,21 +59,11 @@ else{
         header('Location: Login.php');
     }
     else{
-        $str="Debe seleccionar una opción valida";
-        $str= $str."<body>
-            <form action=\"PaginaInicio.php\" method=\"post\" name=\"n\">
-                <button type=\"submit\">
-                VOLVER
-                </button>
-
-            </form>
-
-        </body>";
         $ver = new Pantalla("ERROR", "Opción invalida");
-        $ver->setcuerpo($str);
-        $ver->mostrar();
+        $ver->error("PaginaInicio.php","Debe seleccionar una opción válida");
+        
     }
-}
+}}
    
 
 ?>
