@@ -6,8 +6,8 @@ include ("Pantalla.php");
 $pinE = $_POST["PINE"];
 $pinP = $_POST["PINP"];
 $tipo = $_POST["Tipo"];
-$_SESSION["tipoSesion"]= $_POST["TipoSesion"];
-$tipoSesion=$_SESSION["tipoSesion"];
+$tipoSesion= $_POST["TipoSesion"];
+$_SESSION["tipoSesion"] = $tipoSesion;
 $uProfesor= $_POST["USER"];
 $pProfesor= $_POST["PASS"];
 if($pProfesor=="123" and $uProfesor=="rasarag"){

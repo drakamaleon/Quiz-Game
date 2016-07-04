@@ -38,7 +38,7 @@ $str= $str."<body>
 }
 else{
 $str= $str."<body>
-            <form action=\"Guardar.php\" method=\"post\" name=\"n\">
+            <form action=\"GuardarE.php\" method=\"post\" name=\"n\">
                 <button type=\"submit\">
                 TERMINAR
                 </button>
