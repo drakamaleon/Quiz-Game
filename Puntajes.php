@@ -6,7 +6,7 @@ include ("Jugador.php");
     session_start();
     if($_SESSION["puntaje"]==""){
         $_SESSION["puntaje"]="Otro";
-        $ver = new Pantalla("PUNTUACIONES","QG-Puntuacion");
+        $ver = new Pantalla("PUNTUACIONES","QG-Puntuacion",false);
         
      $ver->setcuerpo("<form action=\"Puntajes.php\" method=\"post\" name=\"frm\">
             <input type=\"radio\" name=\"Usar\" value=\"PUNTAJES\" checked=\"checked\" /> PUNTAJES<br>
@@ -44,7 +44,7 @@ include ("Jugador.php");
         
         $promedio1= array_sum($total)/count($total);
         $promedio2= array_sum($total2)/count($total2);
-        $ver = new Pantalla($tipo,"QG-".$tipo."");
+        $ver = new Pantalla($tipo,"QG-".$tipo."",true);
         $C1=count($fila1);
         $C2=count($fila2);
         if($tipo =="TOP10"){

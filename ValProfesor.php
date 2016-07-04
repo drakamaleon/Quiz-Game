@@ -33,6 +33,6 @@ elseif($pregunta!="" and $fila!="" and $respuesta!=null){
      
      
 }else{
-     $ver = new Pantalla("ERROR","ERROR");
+     $ver = new Pantalla("ERROR","ERROR",false);
      $ver->error("Llenar.php","Ingrese una pregunta correcta");
 }

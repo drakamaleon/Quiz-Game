@@ -15,14 +15,14 @@ if($opp!="" and $preg!="" and $fil!="" ){
 
      $opp = array_values(array_unique($opp));
      if(count($opp)<2){
-          $ver = new Pantalla("ERROR","QG-ERROR");
+          $ver = new Pantalla("ERROR","QG-ERROR",false);
           $ver->error("Llenar.php","Ingrese al menos 2 opciones");
      }
      else{
           $_SESSION["opciones"] =$opp;
           $str="";
           
-          $resp=new Pantalla("Respuesta", "QG-Respuesta");
+          $resp=new Pantalla("Respuesta", "QG-Respuesta",false);
           for ($k=0;$k<count($opp);$k+=1){
              $opcion=$opp[$k];
              $str=$str."<input type=\"radio\" name=\"respuesta\" value=\"".$opcion."\"/>".$opcion."<br>";
@@ -51,6 +51,6 @@ if($opp!="" and $preg!="" and $fil!="" ){
      
 
 else{
-     $ver = new Pantalla("ERROR","QG-ERROR");
+     $ver = new Pantalla("ERROR","QG-ERROR",false);
      $ver->error("Llenar.php","Ingrese todos los campos");
 }

@@ -12,7 +12,7 @@ class Pantalla{
     public $TituloI;
     public $TituloD;
     public $piePagina;
-    function __construct($Crear,$nomPestanha){
+    function __construct($Crear,$nomPestanha,$bandera){
         $tituloPrincipal="<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n".
               "</head>\n" .
               "<style>\n" .
@@ -43,7 +43,20 @@ class Pantalla{
                 "<head>\n" .
                 "<title>".$nomPestanha."</title>\n" .""
                 .$tituloPrincipal;
-        $this->piePagina=
+     
+     if($bandera){
+          $this->piePagina="<form action=\"PaginaInicio.php\" method=\"post\" name=\"frm\">
+            <button type=\"submit\">
+            VOLVER  INICIO
+            </button>
+            
+        </form>";
+     }
+     else{
+          $this->piePagina="";
+     }
+     
+        $this->piePagina=$this->piePagina.
      
    
     "\n".

@@ -9,6 +9,6 @@ $fp =fopen($_SESSION["pinG"],"a");
      }
      
 $mostrar="El PIN DE SU SESSION ES:".$_SESSION["pinG"];
-$ver = new Pantalla("PIN DE LA SESION","Finalizado");
+$ver = new Pantalla("PIN DE LA SESION","Finalizado",true);
 $ver->setcuerpo($mostrar);
 $ver->mostrar();

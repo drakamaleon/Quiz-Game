@@ -6,6 +6,6 @@ if($_POST["Nombre"]!=""){
      header('Location: Responder.php');
 }
 else{
-     $ver = new Pantalla("ERROR","ERROR");
+     $ver = new Pantalla("ERROR","ERROR",false);
      $ver ->error("Usuario.php","Ingrese un nombre de usuario");
 }

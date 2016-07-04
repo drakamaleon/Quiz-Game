@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <?php
 include ("Pantalla.php");
-    $vera = new Pantalla("INICIO ESTUDIANTE","QG-Estudiante");
+    $vera = new Pantalla("INICIO ESTUDIANTE","QG-Estudiante",false);
         
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
             <input type=\"radio\" name=\"Tipo\" value=\"JUGAR\" checked=\"checked\" />Empezar juego<br>Ingrese PIN<br>"

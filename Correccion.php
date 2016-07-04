@@ -50,6 +50,6 @@ $str= $str."<body>
 }
 
 
-$ver = new Pantalla("Resultado", "Correción");
+$ver = new Pantalla("Resultado", "Correción",false);
 $ver->setcuerpo($str);
 $ver->mostrar();

@@ -13,7 +13,7 @@ $pProfesor= $_POST["PASS"];
 if($pProfesor=="123" and $uProfesor=="rasarag"){
     header('Location: InicioProfesor.php');
 }elseif($pProfesor!="" and $uProfesor!=""){
-        $vera = new Pantalla("ERROR","QG-ERROR");
+        $vera = new Pantalla("ERROR","QG-ERROR",false);
         $vera->error("Login.php","Ingrese un usuario correcto");
     }
 else{
@@ -48,7 +48,7 @@ if($pinE!=NULL or $pinP = $_POST["PINP"]){
         }
 
     } else {
-        $invalid=new Pantalla("PIN NO VÁLIDO", "QG-Invalid PIN");
+        $invalid=new Pantalla("PIN NO VÁLIDO", "QG-Invalid PIN",false);
         $invalid->error("PaginaInicio.php","Ingrese un PIN valido");
     }
 }
@@ -60,7 +60,7 @@ else{
         header('Location: Login.php');
     }
     else{
-        $ver = new Pantalla("ERROR", "Opción invalida");
+        $ver = new Pantalla("ERROR", "Opción invalida",false);
         $ver->error("PaginaInicio.php","Debe seleccionar una opción válida");
         
     }

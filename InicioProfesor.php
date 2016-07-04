@@ -7,7 +7,7 @@
  */
 include ("Pantalla.php");
 
-    $vera = new Pantalla("INICIO PROFESOR","QG-Profesor");
+    $vera = new Pantalla("INICIO PROFESOR","QG-Profesor",false);
     $_SESSION["cuestionario"]=array();
      $_SESSION["pinG"]=0;
      $_SESSION["puntaje"]="";

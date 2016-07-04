@@ -7,7 +7,7 @@
  */
 
 include ("Pantalla.php");
-    $vera = new Pantalla("ACCEDER","QG-Acceso Profesor");
+    $vera = new Pantalla("ACCEDER","QG-Acceso Profesor",false);
         
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
             <br>Ingrese usuario de ESPOL ( en serio Espol :) )<br>

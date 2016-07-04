@@ -14,6 +14,6 @@ $str="<form action=\"Respuestas.php\" method=\"post\" name=\"frm\">
             
         </form>";
         
-$ver= new Pantalla("LLENAR","LLENADO");
+$ver= new Pantalla("LLENAR","LLENADO",false);
 $ver->setcuerpo($str);
 $ver->mostrar();

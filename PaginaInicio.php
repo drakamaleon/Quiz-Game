@@ -8,7 +8,7 @@
 
 include ("Pantalla.php");
     
-    $vera = new Pantalla("INICIO","QuizGame");
+    $vera = new Pantalla("INICIO","QuizGame",false);
         
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
             <input type=\"radio\" name=\"TipoSesion\" value=\"ESTUDIANTE\"/>Estudiante<br>

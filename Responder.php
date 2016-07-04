@@ -14,7 +14,7 @@ $i=$_SESSION["iterador"];
 function mostrarPregunta($pregunta,$i){
     $str="";
     $opciones=$pregunta->opciones;
-    $resp=new Pantalla("".$i.":".$pregunta->pregunta, "QG-Fila".$pregunta->fila." Preg ".$i);
+    $resp=new Pantalla("".$i.":".$pregunta->pregunta, "QG-Fila".$pregunta->fila." Preg ".$i,false);
     for ($k=0;$k<count($opciones);$k+=1){
         $opcion=$opciones[$k];
         $str=$str."<input type=\"radio\" name=\"Usar\" value=\"".$opcion."\"/>".$opcion."<br>";

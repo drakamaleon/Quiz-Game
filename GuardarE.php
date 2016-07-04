@@ -19,6 +19,6 @@ include("Preguntas.php");
      .    "<li>Fila: ".$fila."</li>"
              . "</ul>";
      
-     $ver = new Pantalla(strtoupper($nombre),"Finalizado");
+     $ver = new Pantalla(strtoupper($nombre),"Finalizado",true);
      $ver->setcuerpo($mostrar);
      $ver->mostrar();
