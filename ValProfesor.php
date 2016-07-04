@@ -18,8 +18,12 @@ while($bandera and $_SESSION["pinG"]==0){
      }
      
 }
-if($respuesta==null){
+if($respuesta==null and $fila ==null){
      
+     $ver=new Pantalla("ERROR","QG-Error",false);
+     $ver->error("Llenar.php","Ingrese una respuesta");
+}
+if($respuesta==null){
      header("Location: Llenar.php");
 }
 elseif($pregunta!="" and $fila!="" and $respuesta!=null){

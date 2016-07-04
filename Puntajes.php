@@ -11,7 +11,9 @@ include ("Jugador.php");
      $ver->setcuerpo("<form action=\"Puntajes.php\" method=\"post\" name=\"frm\">
             <input type=\"radio\" name=\"Usar\" value=\"PUNTAJES\" checked=\"checked\" /> PUNTAJES<br>
             <input type=\"radio\" name=\"Usar\" value=\"TOP10\" /> TOP 10<br>
-           <input type=\"submit\" name =\"ENVIAR\"/>
+            <button type=\"submit\">
+            Ir
+            </button>
             
     </form>");
      $ver->mostrar();

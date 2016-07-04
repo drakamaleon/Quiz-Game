@@ -10,9 +10,9 @@ include ("Pantalla.php");
     $vera = new Pantalla("ACCEDER","QG-Acceso Profesor",false);
         
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
-            <br>Ingrese usuario de ESPOL ( en serio Espol :) )<br>
+            <br>Ingrese usuario de ESPOL ( en serio, profesor, su usuario de Espol :) )<br>
             <input type=\"text\" name =\"USER\"/>
-            <br>Ingrese contraseña<br>
+            <br>Ingrese contraseña(123)<br>
             <input type=\"password\" name =\"PASS\"/>
             <button type=\"submit\">
             Ingresar

@@ -12,7 +12,7 @@ include ("Pantalla.php");
      $_SESSION["pinG"]=0;
      $_SESSION["puntaje"]="";
      $vera->setcuerpo("<form action=\"Validador.php\" method=\"post\" name=\"frm\">
-            <input type=\"radio\" name=\"Tipo\" value=\"PUNTAJES\"/>Ver Puntajes<br>
+            <b>Ver Puntajes<br></b>
             Ingrese PIN de la sesión<br>
             <input type=\"text\" name =\"PINP\"/>
             <button type=\"submit\">
@@ -20,7 +20,7 @@ include ("Pantalla.php");
             </button>
             </form>
             <form action=\"ValProfesor.php\" method=\"post\" name=\"frm\">
-            <input type=\"radio\" name=\"Tipo\" value=\"GENERAR\"/>Crear Preguntas<br>
+            <b>Crear Preguntas<br></b>
             <button type=\"submit\">
             Crear
             </button>
